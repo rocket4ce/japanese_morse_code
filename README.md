@@ -1,21 +1,13 @@
 # JapaneseMorseCode
+#### Overview
+JapaneseMorseCode is an Elixir module that provides a Morse code dictionary for Japanese kana characters. It allows you to encode and decode messages using Morse code representations of Japanese katakana characters, including support for dakuten and handakuten diacritics.
 
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `japanese_morse_code` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:japanese_morse_code, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/japanese_morse_code>.
-
+This module is useful for applications that require Morse code communication in Japanese or for educational purposes to learn Morse code in the context of the Japanese language.
+#### Feature
+- **Encode** Japanese katakana strings into Morse code using standard dots (.) and dashes (-).
+- **Decode** Morse code strings back into Japanese katakana.
+- Support for **dakuten** (゛) and **handakuten** (゜) diacritics.
+- Handling of spaces between words.
+- Ignoring of **unsupported characters** during encoding and decoding.
+#### Installation
+TODO
