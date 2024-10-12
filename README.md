@@ -10,4 +10,30 @@ This module is useful for applications that require Morse code communication in 
 - Handling of spaces between words.
 - Ignoring of **unsupported characters** during encoding and decoding.
 #### Installation
-TODO
+Add the following to your `mix.exs` file:
+
+```elixir
+def deps do
+      [{:japanese_morse_code, "~> 0.1.0"}]
+end
+```
+```bash
+$ mix deps.get
+```
+
+#### Usage
+To encode a Japanese katakana string into Morse code:
+
+```elixir
+iex> JapaneseMorseCode.encode("イロハニホヘト")
+" .- .-.- -... -.-. -.. . ..-.."
+```
+To decode a Morse code string back into Japanese katakana:
+
+```elixir
+iex> JapaneseMorseCode.decode(".- .-.- -... -.-. -.. . ..-..")
+"イロハニホヘト"
+```
+Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
