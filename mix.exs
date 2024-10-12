@@ -1,13 +1,17 @@
 defmodule JapaneseMorseCode.MixProject do
   use Mix.Project
-
+  @version "0.1.0"
+  @source_url "https://github.com/rocket4ce/japanese_morse_code"
   def project do
     [
       app: :japanese_morse_code,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: description(),
+      package: package(),
+      docs: docs()
     ]
   end
 
@@ -21,8 +25,27 @@ defmodule JapaneseMorseCode.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:ex_doc, "~> 0.14", only: :dev, runtime: false}
+    ]
+  end
+
+  defp description do
+    "Japanese Morse Encode and Decode"
+  end
+
+  defp package do
+    [
+      maintainers: ["rocket4ce"],
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => @source_url}
+    ]
+  end
+
+  defp docs do
+    [
+      main: "README.md",
+      name: "Japanese Morse Code",
+      source_url: @source_url
     ]
   end
 end
