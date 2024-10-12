@@ -72,6 +72,8 @@ defmodule JapaneseMorseCode do
 
       iex> JapaneseMorseCode.encode("イロハニホヘト")
       ".- .-.- -... -.-. -.. . ..-.."
+      iex> JapaneseMorseCode.decode(".- .-.- -... -.-. -.. . ..-..")
+      "イロハニホヘト"
   """
 
   def encode(text) when is_binary(text) do
@@ -80,5 +82,16 @@ defmodule JapaneseMorseCode do
     |> Enum.map(&Map.get(@kana_morse, &1, ""))
     |> Enum.filter(&(&1 != ""))
     |> Enum.join(" ")
+  end
+
+  def decode(morse) when is_binary(morse) do
+    morse_to_kana =
+      morse_code()
+      |> Enum.into(%{}, fn {kana, code} -> {code, kana} end)
+
+    morse
+    |> String.split(" ")
+    |> Enum.map(&Map.get(morse_to_kana, &1, ""))
+    |> Enum.join("")
   end
 end
