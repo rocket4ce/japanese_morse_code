@@ -65,4 +65,31 @@ defmodule JapaneseMorseCodeTest do
   test "decode text" do
     assert JapaneseMorseCode.decode(".- .-.- -... -.-. -.. . ..-..") == "イロハニホヘト"
   end
+
+  test "encoding and decoding a full string" do
+    original = "イロハニホヘトチリヌルヲ"
+    morse = JapaneseMorseCode.encode(original)
+    decoded = JapaneseMorseCode.decode(morse)
+    assert decoded == original
+  end
+
+  test "encoding an empty string" do
+    assert JapaneseMorseCode.encode("") == ""
+  end
+
+  test "encoding with spaces between words" do
+    original = "イロ ハニ ホヘト"
+    morse = JapaneseMorseCode.encode(original)
+    expected_morse = ".- .-.- / -... -.-. / -.. . ..-.."
+    assert morse == expected_morse
+
+  end
+
+  test "decoding with spaces between words" do
+    original = "イロ ハニ ホヘト"
+    morse = JapaneseMorseCode.encode(original)
+    decoded = JapaneseMorseCode.decode(morse)
+    assert decoded == original
+  end
+
 end
