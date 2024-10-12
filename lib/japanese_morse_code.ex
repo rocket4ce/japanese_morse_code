@@ -67,7 +67,13 @@ defmodule JapaneseMorseCode do
 
   @doc """
   Encodes a string oj Japanese kana into Morse code.
+
+  ## Examples
+
+      iex> JapaneseMorseCode.encode("イロハニホヘト")
+      ".- .-.- -... -.-. -.. . ..-.."
   """
+
   def encode(text) when is_binary(text) do
     text
     |> String.graphemes()
