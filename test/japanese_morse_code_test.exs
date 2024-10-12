@@ -61,4 +61,8 @@ defmodule JapaneseMorseCodeTest do
   test "encode text" do
     assert JapaneseMorseCode.encode("イロハニホヘト") == ".- .-.- -... -.-. -.. . ..-.."
   end
+
+  test "decode text" do
+    assert JapaneseMorseCode.decode(".- .-.- -... -.-. -.. . ..-..") == "イロハニホヘト"
+  end
 end
