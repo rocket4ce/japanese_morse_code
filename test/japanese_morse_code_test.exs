@@ -82,7 +82,6 @@ defmodule JapaneseMorseCodeTest do
     morse = JapaneseMorseCode.encode(original)
     expected_morse = ".- .-.- / -... -.-. / -.. . ..-.."
     assert morse == expected_morse
-
   end
 
   test "decoding with spaces between words" do
@@ -91,5 +90,4 @@ defmodule JapaneseMorseCodeTest do
     decoded = JapaneseMorseCode.decode(morse)
     assert decoded == original
   end
-
 end
