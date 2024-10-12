@@ -57,4 +57,8 @@ defmodule JapaneseMorseCodeTest do
       " " => "/"
     }
   end
+
+  test "encode text" do
+    assert JapaneseMorseCode.encode("こんにちは") == "-.-..-..-..---/..-.-.-.-.-.-.-"
+  end
 end
