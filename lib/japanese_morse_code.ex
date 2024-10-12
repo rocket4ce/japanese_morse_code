@@ -56,15 +56,9 @@ defmodule JapaneseMorseCode do
     " " => "/"            # Space represented by "/"
   }
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> JapaneseMorseCode.hello()
-      :world
-
+  Return the complete Morse code dictionary for Japanese Kana.
   """
-  def hello do
-    :world
+  def morse_code do
+    @kana_morse
   end
 end
